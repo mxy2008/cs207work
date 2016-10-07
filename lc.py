@@ -97,7 +97,9 @@ class LightCurveDB:
     def retrieve(self, facet, value):
         if facet == 'field':
             return self._field_index[value]
-        if facet == 'tile':
+        elif facet == 'tile':
             return self._tile_index[value]
-        if facet == 'color':
+        elif facet == 'color':
             return self._color_index[value]
+        else:
+            raise Exception('Facet is not found')
